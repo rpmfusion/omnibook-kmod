@@ -9,7 +9,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.1.svn288%{?dist}
+Release:        0.2.svn288%{?dist}
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -27,12 +27,6 @@ Patch0:         %{name}-warnings.patch
 # add support for Toshiba Satellite A300D: http://sourceforge.net/tracker/?func=detail&aid=2841062&group_id=174260&atid=868544
 Patch1:         %{name}-a300d.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-
-BuildRequires:  %{_bindir}/kmodtool
-
-
-# needed for plague to make sure it builds for i686
-ExclusiveArch:  i686 x86_64
 
 # get the proper build-sysbuild package from the repo, which
 # tracks in all the kernel-devel packages
@@ -91,5 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Jan 07 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.2.svn288
+- drop unnecessary ExclusiveArch
+- drop double BR: kmodtool
+
 * Wed Sep 16 2009 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.1.svn288
 - initial build for RPM Fusion
