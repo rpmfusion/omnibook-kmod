@@ -9,7 +9,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.2.svn288%{?dist}
+Release:        0.3.svn288%{?dist}
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -70,8 +70,6 @@ done
 
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
-
 for kernel_version in %{?kernel_versions}; do
 # doesn't work
 #    make install -C "${kernel_version##*___}" DESTDIR=${RPM_BUILD_ROOT} KMODPATH=%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}
@@ -85,6 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jan 08 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.3.svn288
+- fix build on rawhide
+
 * Thu Jan 07 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.2.svn288
 - drop unnecessary ExclusiveArch
 - drop double BR: kmodtool
