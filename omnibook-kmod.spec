@@ -1,5 +1,5 @@
 # (un)define the next line to either build for the newest or all current kernels
-#define buildforkernels newest
+%define buildforkernels newest
 #define buildforkernels current
 
 %define         svn 1
@@ -8,7 +8,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.4.svn288%{?dist}.5
+Release:        0.4.svn288%{?dist}.6
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -82,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu May 20 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.20090714-0.4.svn288.6
+- rebuild for new kernel
+
 * Mon May 17 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.20090714-0.4.svn288.5
 - rebuild for new kernel
 
