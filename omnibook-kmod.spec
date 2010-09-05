@@ -9,7 +9,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.4.svn288%{?dist}
+Release:        0.5.svn288%{?dist}
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -26,6 +26,8 @@ Source0:        http://downloads.sourceforge.net/project/omnibook/omnibook%20ker
 Patch0:         %{name}-warnings.patch
 # add support for Toshiba Satellite A300D: http://sourceforge.net/tracker/?func=detail&aid=2841062&group_id=174260&atid=868544
 Patch1:         %{name}-a300d.patch
+# fix compilation with kernel-2.6.34: http://sourceforge.net/tracker/?func=detail&aid=2978676&group_id=174260&atid=868544
+Patch2:         %{name}-backlight-2.6.34.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 # get the proper build-sysbuild package from the repo, which
@@ -56,6 +58,7 @@ kmodtool  --target %{_target_cpu}  --repo rpmfusion --kmodname %{name} %{?buildf
 pushd omnibook-%{version}
 %patch0 -p1 -b .warn
 %patch1 -p1 -b .a300d
+%patch2 -p1 -b .bl
 popd
 
 for kernel_version in %{?kernel_versions} ; do
@@ -83,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Sep 05 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.5.svn288
+- fix build with kernel 2.6.34
+
 * Sat Jan 09 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.4.svn288
 - build only akmods in rawhide
 
