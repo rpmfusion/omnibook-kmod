@@ -2,7 +2,7 @@
 # that contains bugfixes or other improvements then you must disable the
 # "buildforkernels newest" macro ; only that wy a new akmod package will 
 # get build (and only then one is is actually needed)
-#define buildforkernels newest
+%define buildforkernels newest
 
 %define         svn 1
 
@@ -10,7 +10,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.5.svn288%{?dist}.3
+Release:        0.5.svn288%{?dist}.4
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -87,6 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Sep 19 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.20090714-0.5.svn288.4
+- rebuild for new kernel
+
 * Sat Sep 11 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 2.20090714-0.5.svn288.3
 - rebuild with akmod package and add proper hint to spec file
 
