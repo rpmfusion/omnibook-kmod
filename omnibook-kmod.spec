@@ -1,7 +1,9 @@
-# (un)define the next line to either build for the newest or all current kernels
+# buildforkernels macro hint: when you build a new version or a new release
+# that contains bugfixes or other improvements then you must disable the
+# "buildforkernels newest" macro for just that build; immediately after
+# queuing that build enable the macro again for subsequent builds; that way
+# a new akmod package will only get build when a new one is actually needed
 %define buildforkernels newest
-#define buildforkernels current
-%define buildforkernels akmods
 
 %define         svn 1
 
@@ -87,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Sun Jul 31 2011 Nicolas Chauvet <kwizart@gmail.com> - 2.20090714-0.5.svn288.4
+- Fix kmod header
 - rebuild for updated kernel
 
 * Tue Jul 12 2011 Nicolas Chauvet <kwizart@gmail.com> - 2.20090714-0.5.svn288.3
