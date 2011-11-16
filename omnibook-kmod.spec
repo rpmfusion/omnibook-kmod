@@ -9,7 +9,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.6.svn288%{?dist}.2
+Release:        0.6.svn288%{?dist}.3
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Nov 16 2011 Nicolas Chauvet <kwizart@gmail.com> - 2.20090714-0.6.svn288.3
+- rebuild for updated kernel
+
 * Mon Nov 14 2011 Nicolas Chauvet <kwizart@gmail.com> - 2.20090714-0.6.svn288.2
 - rebuild for updated kernel
 
