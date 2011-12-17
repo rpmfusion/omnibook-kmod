@@ -1,7 +1,5 @@
 # (un)define the next line to either build for the newest or all current kernels
-%define buildforkernels newest current
-%define buildforkernels newest current
-%define buildforkernels newest current
+%define buildforkernels newest
 
 %define         svn 1
 
@@ -9,7 +7,7 @@
 Name:           omnibook-kmod
 
 Version:        2.20090714
-Release:        0.6.svn288%{?dist}.8
+Release:        0.6.svn288%{?dist}.9
 Summary:        Kernel module for HP Omnibook/Pavillon, Toshiba Satellite and Compal laptops
 
 Group:          System Environment/Kernel
@@ -86,6 +84,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sat Dec 17 2011 Nicolas Chauvet <kwizart@gmail.com> - 2.20090714-0.6.svn288.9
+- rebuild for updated kernel
+
 * Sat Dec 17 2011 Nicolas Chauvet <kwizart@gmail.com> - 2.20090714-0.6.svn288.8
 - rebuild for updated kernel
 
