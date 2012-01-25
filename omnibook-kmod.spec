@@ -1,7 +1,5 @@
 # (un)define the next line to either build for the newest or all current kernels
 %define buildforkernels current
-%define buildforkernels current
-%define buildforkernels current
 
 %define         svn 1
 
